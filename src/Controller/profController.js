@@ -55,12 +55,13 @@ class ProfessorController {
     const professor = new Professor(nome, disciplina, email);
 
     this.conecta
-      .atualizaProf(nomeProf, professor)
+      .atualizaProf(professor, nomeProf)
       .then((err) => {
         throw err;
       })
       .catch(() => {
         res.send({ message: "Professor atualizado" });
+        console.log(professor)
       });
   };
 

@@ -53,5 +53,5 @@ app.delete("/aluno/:nome", alunoController.remove);
 
 //Servidor rodando na porta 3000
 app.listen(APP_PORT, ()=> {
-    console.log(`Aplicação escutando a porta ${APP_PORT}`);
+    console.log(`Aplicação rodando na porta ${APP_PORT}`);
 });
