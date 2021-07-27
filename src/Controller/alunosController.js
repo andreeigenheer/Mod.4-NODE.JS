@@ -48,18 +48,17 @@ class AlunoController {
   //Insira a função que atualiza um aluno (método PUT)
   atualiza = (req, res) => {
     const nomeAluno = req.params.nome;
-
     const { nome, turma, email } = req.body;
-
     const aluno = new Aluno(nome, turma, email);
 
     this.conecta
-      .atualizaAluno(nome, nomeAluno)
-      .then(() => {
-        res.send({ message: "Aluno alterado com sucesso", data: aluno });
-      })
-      .catch((err) => {
+      .atualizaAluno(aluno, nomeAluno)
+      .then((err) => {
         throw err;
+      })
+      .catch(() => {
+        res.send({ message: "Aluno atualizado" });
+        console.log(aluno)
       });
   };
 

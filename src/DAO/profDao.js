@@ -51,7 +51,7 @@ class ProfessorDAO {
   atualizaProf = (professor, professorNome) => {
     return new Promise((resolve, reject) => {
       this.db.run(
-        "UPDATE PROFESSORES SET NOME = ?, DISCIPLINA = ?, EMAIL = ? HAVING NOME like ?",
+        "UPDATE PROFESSORES SET NOME = ?, DISCIPLINA = ?, EMAIL = ? WHERE NOME like ?",
         [professor.nome, professor.disciplina, professor.email, professorNome],
         (err) => {
           if (err) {

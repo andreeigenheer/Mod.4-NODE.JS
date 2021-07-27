@@ -48,11 +48,11 @@ class AlunosDAO {
     });
   };
 
-  atualizaAluno = (alunos, alunosNome) => {
+  atualizaAluno = (aluno, alunoNome) => {
     return new Promise((resolve, reject) => {
       this.db.run(
-        "UPDATE ALUNOS SET NOME = ?, TURMA = ?, EMAIL = ? WHERE NOME = ?",
-        [alunos.name, alunos.email, alunos.oassword, alunosNome],
+        "UPDATE ALUNOS SET NOME = ?, TURMA = ?, EMAIL = ? WHERE NOME like ?",
+        [aluno.nome, aluno.turma, aluno.email, alunoNome],
         (err) => {
           if (err) {
             reject(err);
