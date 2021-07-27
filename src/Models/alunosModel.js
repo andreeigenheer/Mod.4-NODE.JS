@@ -5,5 +5,4 @@ class Alunos {
         this.email = email;
     }
 }
-
 module.exports = Alunos
