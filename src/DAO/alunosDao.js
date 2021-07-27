@@ -1,41 +1,80 @@
 class AlunosDAO {
-    constructor(database) {
-        this.db = database;
-    }
-
-    visualizaUmAluno = () => {};
-
-    visualizaTodosAluno = () => {};
-
-    insereAluno = () => {};
-
-    atualizaAluno = () => {};
-
-    removeAluno = () => app.delete("/alunoModels/:id", (req, res) => {
-        const alunoModels = alunoModels.deleteOne({ _id: req.params.id }, (err) => {
-            if (err) return res.status(400).json({
-                error: true,
-                message: "Error: Aluno não foi apagado!"
-            });
-
-            return res.json({
-                error: false,
-                message: "Professor adicionado com sucesso!"
-            });
-        });
+  constructor(database) {
+    this.db = database;
+  }
+  visualizaUmAluno = (nome) => {
+    return new Promise((resolve, reject) => {
+      this.db.get(
+        "SELECT * FROM ALUNOS WHERE NOME LIKE ?",
+        nome,
+        (err, rows) => {
+          if (!err) {
+            resolve(rows);
+          } else {
+            reject(err);
+          }
+        }
+      );
     });
+  };
 
+  visualizaTodosAlunos = () => {
+    return new Promise((resolve, reject) => {
+      this.db.all("SELECT * FROM ALUNOS", (err, rows) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(rows);
+        }
+      });
+    });
+  };
+
+  insereAluno = (alunos) => {
+    return new Promise((resolve, reject) => {
+      this.db.run(
+        `INSERT INTO ALUNOS (NOME, TURMA, EMAIL) VALUES (?, ?, ?)`,
+        alunos.nome,
+        alunos.turma,
+        alunos.email,
+        (err) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(alunos);
+          }
+        }
+      );
+    });
+  };
+
+  atualizaAluno = (alunos, alunosNome) => {
+    return new Promise((resolve, reject) => {
+      this.db.run(
+        "UPDATE ALUNOS SET NOME = ?, TURMA = ?, EMAIL = ? WHERE NOME = ?",
+        [alunos.name, alunos.email, alunos.oassword, alunosNome],
+        (err) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(true);
+          }
+        }
+      );
+    });
+  };
+
+  removeAluno = (nome) => {
+    return new Promise((resolve, reject) => {
+      this.db.run("DELETE FROM ALUNOS WHERE NOME like ?", nome, (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(true);
+        }
+      });
+    });
+  };
 }
 
-removeAluno = (req, res) => {
-    const model = req.params.model;
-
-    this.database = this.database.filter((professoresModel) => {
-        return professoresModel.model !== model;
-    });
-
-    res.send({
-        message: "professor removido do banco de dados",
-        data: model,
-    });
-};
+module.exports = AlunosDAO;
