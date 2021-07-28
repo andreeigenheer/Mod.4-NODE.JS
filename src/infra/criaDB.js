@@ -44,12 +44,12 @@ CREATE TABLE IF NOT EXISTS "ALUNOS" (
 
 const ADD_ALUNOS_DATA = `INSERT INTO ALUNOS (ID, NOME, TURMA, EMAIL)
 VALUES 
-       ('1', 'Ana Carolina Dias', '1 ano A', 'ana.dias@email.com'),
-       ('2', 'Andre Faria', '2 ano B', 'andre.faria@email.com'),
-       ('3', 'Andressa Dias', '1 ano B', 'andressa.dias@email.com'),
-       ('4', 'Bruna Correa', '3 ano A', 'bruna.correa@email.com'),
-       ('5', 'Bruno Cavalcanti', '4 ano A', 'bruno.lol@email.com'),
-       ('6', 'Bruno de Almeida', '1 ano B', 'ana.dias@email.com')
+       (1, 'Ana Carolina Dias', '1 ano A', 'ana.dias@email.com'),
+       (2, 'Andre Faria', '2 ano B', 'andre.faria@email.com'),
+       (3, 'Andressa Dias', '1 ano B', 'andressa.dias@email.com'),
+       (4, 'Bruna Correa', '3 ano A', 'bruna.correa@email.com'),
+       (5, 'Bruno Cavalcanti', '4 ano A', 'bruno.lol@email.com'),
+       (6, 'Bruno de Almeida', '1 ano B', 'ana.dias@email.com')
 `;
 
 function criaTabelaAlunos() {

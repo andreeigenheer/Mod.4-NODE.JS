@@ -34,7 +34,7 @@ class ProfessorDAO {
     return new Promise((resolve, reject) => {
       this.db.run(
         `INSERT INTO PROFESSORES (NOME, DISCIPLINA, EMAIL) VALUES (?, ?, ?)`,
-        professor.name,
+        professor.nome,
         professor.disciplina,
         professor.email,
         (err) => {
@@ -51,7 +51,7 @@ class ProfessorDAO {
   atualizaProf = (professor, professorNome) => {
     return new Promise((resolve, reject) => {
       this.db.run(
-        "UPDATE PROFESSORES SET NOME = ?, DISCIPLINA = ?, EMAIL = ? WHERE NOME = ?",
+        "UPDATE PROFESSORES SET NOME = ?, DISCIPLINA = ?, EMAIL = ? WHERE NOME like ?",
         [professor.nome, professor.disciplina, professor.email, professorNome],
         (err) => {
           if (err) {
@@ -66,7 +66,7 @@ class ProfessorDAO {
 
   removeProf = (nome) => {
     return new Promise((resolve, reject) => {
-      this.db.run("DELETE FROM PROFESSORES WHERE NOME like ?", nome, (err) => {
+      this.db.run(`DELETE FROM PROFESSORES WHERE NOME like ?`, nome, (err) => {
         if (err) {
           reject(err);
         } else {

@@ -1,8 +1,8 @@
 class Professor {
-    constructor(nome, disciplina, turma) {
-        this.nome = nome;
-        this.disciplina = disciplina;;
-        this.turma = turma;
+    constructor(nome, disciplina, email) {
+        this.nome = nome,
+        this.disciplina = disciplina,
+        this.email = email
     }
 }
 
