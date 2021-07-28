@@ -11,12 +11,43 @@ Nossa API, criada usando os conhecimentos adquiridos no módulo 4, do curso de d
 - Javascript
 - NodeJs
 
+# 💻 Como executar o projeto
+
+Versão do Node: v14.16.
+
+- Clonar esse repositório
+- Abrir no editor de texto da sua preferência (recomendamos o vscode)
+- No editor: Abrir o terminal atrelado ao index. Dar o comando "npm init" para criar o módulo do node. 
+- Esse trabalho requer as seguintes dependencias: 
+	-   cors: versão: 2.8.5 (Comando: "npm i cors")
+    	-   express: versão: 4.17.1 (Comando: "npm i express")
+    	-   jest: versão: 27.0.6 (Comando: "npm i jest")
+	-   nodemon -> versão: 2.0.12 (Comando: "npm i nodemon")  
+	-   router: versão: 27.0.6 (Comando: "npm i router")
+	-   sqlite3 -> versão: 5.0.2 (Comando: "npm i sqlite3") 
+
+
+#### ⚠️ Informação importante 
+
+Antes da execução é importante instalar a base de dados, da seguinte maneira:
+
+- node infra/criaDB.js criar a base de dados
+- Deve ser executado apenas uma vez.
+
+# 👨‍💻 Operando sobre a API
+
+- Para os métodos HTTP (exceto GET), o navegador é insuficiente, por isso recomendamos o uso do POSTMAN ou do INSOMNIA para executar as operações. 
+
+- A aplicação reserva para si a porta 3000, que pode ser aberta usando o endereço "http://localhost/3000". 
+
+- As rotas reservadas pela aplicação são "professor"  e "aluno", e os parâmetros para visualização em ambos são os nomes.
+
+- As operações reservadas para nossa API foram (GET, POST, PUT, DELETE), responsáveis pelas operações de visualização, criação, atualização e deleção respectivamente.
+
 ## 🤜🤛 Grupo:
 
-- 👨 [André Eigenheer]("https://github.com/andreeigenheer" "github do André")
-- 👩 [Emily Ferreira]("https://github.com/EmilyFZ" "github da Emily")
-- 👨 [Lucas V. Ferreira]("https://github.com/LucasViniciusF" "github do Lucas")
-- 👩 [Renata Hortense]("https://github.com/renatahortense" "github da Renata")
-- 👨 [Ronaldo Santos]("https://github.com/ronfsantos" "github do Ronaldo")
-
-# Como executar o projeto
+- 👨 [André Eigenheer](https://github.com/andreeigenheer "github do André")
+- 👩 [Emily Ferreira](https://github.com/EmilyFZ "github da Emily")
+- 👨 [Lucas V. Ferreira](https://github.com/LucasViniciusF "github do Lucas")
+- 👩 [Renata Hortense](https://github.com/renatahortense "github da Renata")
+- 👨 [Ronaldo Santos](https://github.com/ronfsantos "github do Ronaldo")
