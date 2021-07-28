@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS "PROFESSORES" (
     "NOME" varchar(64),
     "DISCIPLINA" varchar(30),
     "EMAIL" varchar(50)
-  )`;
+  );`;
 
 const ADD_PROFESSORES_DATA = `
 INSERT INTO PROFESSORES (ID, NOME, DISCIPLINA, EMAIL)
@@ -22,15 +22,15 @@ VALUES
 `;
 
 function criaTabelaPrf() {
-  db.run(PROFESSORES_SCHEMA, (error) => {
-    if (error) console.log("Erro ao criar tabela de professores");
-  });
+    db.run(PROFESSORES_SCHEMA, (error) => {
+        if (error) console.log("Erro ao criar tabela de professores");
+    });
 }
 
 function populaTabelaPrf() {
-  db.run(ADD_PROFESSORES_DATA, (error) => {
-    if (error) console.log("Erro ao popular tabela de professores");
-  });
+    db.run(ADD_PROFESSORES_DATA, (error) => {
+        if (error) console.log("Erro ao popular tabela de professores");
+    });
 }
 
 //==== Alunos
@@ -53,20 +53,20 @@ VALUES
 `;
 
 function criaTabelaAlunos() {
-  db.run(ALUNOS_SCHEMA, (error) => {
-    if (error) console.log("Erro ao criar tabela de Alunos");
-  });
+    db.run(ALUNOS_SCHEMA, (error) => {
+        if (error) console.log("Erro ao criar tabela de Alunos");
+    });
 }
 
 function populaTabelaAlunos() {
-  db.run(ADD_ALUNOS_DATA, (error) => {
-    if (error) console.log("Erro ao popular tabela de Alunos");
-  });
+    db.run(ADD_ALUNOS_DATA, (error) => {
+        if (error) console.log("Erro ao popular tabela de Alunos");
+    });
 }
 
 db.serialize(() => {
-  criaTabelaPrf();
-  populaTabelaPrf();
-  criaTabelaAlunos();
-  populaTabelaAlunos();
+    criaTabelaPrf();
+    populaTabelaPrf();
+    criaTabelaAlunos();
+    populaTabelaAlunos();
 });
