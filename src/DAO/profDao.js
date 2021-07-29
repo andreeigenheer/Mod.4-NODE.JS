@@ -1,3 +1,5 @@
+const database = require("../infra/sqlite-db")
+
 class ProfessorDAO {
   constructor(database) {
     this.db = database;
@@ -76,18 +78,4 @@ class ProfessorDAO {
     });
   };
 }
-module.exports = ProfessorDAO;
-
-/*
- removeProf = (req, res) => {
-     const model = req.params.model;
-
-     this.database = this.database.filter((professoresModel) => {
-         return professoresModel.model !== model;
-     });
-
-     res.send({
-         message: "professor removido do banco de dados",
-         data: model,
-     });
- };*/
+module.exports = new ProfessorDAO(database);

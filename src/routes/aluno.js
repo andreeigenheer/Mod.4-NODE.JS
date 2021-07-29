@@ -1,11 +1,7 @@
 const router = require("express").Router();
 const database = require("../infra/sqlite-db")
 
-const AlunoDao = require("../DAO/alunosDao")
-const alunoDao = new AlunoDao(database);
-
-const AlunoController = require("../Controller/alunosController");
-const alunoController = new AlunoController(alunoDao);
+const alunoController = require("../Controller/alunosController");
 
 //Define rotas de aluno
 router.get("/aluno/:nome", alunoController.visualizaUm)

@@ -1,5 +1,6 @@
 ///pega as informações do modelo
 const Aluno = require("../Models/alunosModel");
+const alunosDao = require("../DAO/alunosDao");
 
 // As funções devem ser colocadas todas dentro da classe(no escopo do constructor)
 class AlunoController {
@@ -63,4 +64,4 @@ class AlunoController {
   };
 }
 
-module.exports = AlunoController;
+module.exports = new AlunoController(alunosDao);

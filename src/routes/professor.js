@@ -1,11 +1,6 @@
 const router = require("express").Router();
-const database = require("../infra/sqlite-db")
 
-const ProfDao = require("../DAO/profDao")
-const profDao = new ProfDao(database);
-
-const ProfessorController = require("../Controller/profController");
-const professorController = new ProfessorController(profDao);
+const professorController = require("../Controller/profController");
 
 //Define rotas de professor
 
