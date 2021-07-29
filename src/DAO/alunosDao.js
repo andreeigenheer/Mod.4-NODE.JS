@@ -1,3 +1,5 @@
+const database = require("../infra/sqlite-db")
+
 class AlunosDAO {
   constructor(database) {
     this.db = database;
@@ -77,4 +79,4 @@ class AlunosDAO {
   };
 }
 
-module.exports = AlunosDAO;
+module.exports = new AlunosDAO(database);

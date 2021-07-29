@@ -1,14 +1,13 @@
 const router = require("express").Router();
 
-const ProfessorController = require("../Controller/profController");
-const professorController = new ProfessorController();
+const professorController = require("../Controller/profController");
 
 //Define rotas de professor
-router
-  .get ("/professor/:nome", professorController.visualizaUm)
-  .get ("/professor", professorController.visualizaTodos)
-  .post ("/professor", professorController.insere)
-  .put ("/professor/:nome", professorController.atualiza)
-  .delete ("/professor/:nome", professorController.remove);
+
+router.get ("/professor/:nome", professorController.visualizaUm)
+router.get ("/professor", professorController.visualizaTodos)
+router.post ("/professor", professorController.insere)
+router.put ("/professor/:nome", professorController.atualiza)
+router.delete ("/professor/:nome", professorController.remove);
 
 module.exports = router;

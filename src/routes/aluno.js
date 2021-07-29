@@ -1,14 +1,14 @@
 const router = require("express").Router();
+const database = require("../infra/sqlite-db")
 
-const AlunoController = require("../Controller/alunosController");
-const alunoController = new AlunoController();
+const alunoController = require("../Controller/alunosController");
 
 //Define rotas de aluno
-router
-  .get("/aluno/:nome", alunoController.visualizaUm)
-  .get("/aluno", alunoController.visualizaTodos)
-  .post("/aluno", alunoController.insere)
-  .put("/aluno/:nome", alunoController.atualiza)
-  .delete("/aluno/:nome", alunoController.remove);
+router.get("/aluno/:nome", alunoController.visualizaUm)
+router.get("/aluno", alunoController.visualizaTodos)
+router.post("/aluno", alunoController.insere)
+router.put("/aluno/:nome", alunoController.atualiza)
+router.delete("/aluno/:nome", alunoController.remove);
+
 
 module.exports = router;
