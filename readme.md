@@ -49,8 +49,7 @@ Antes da execução é importante instalar a base de dados, da seguinte maneira:
 
 - As rotas reservadas pela aplicação são "professor"  e "aluno", e os parâmetros para visualização em ambos são os nomes.
 
-- As operações reservadas para nossa API foram (G![Cria base de dados](https://user-images.githubusercontent.com/81193034/127495348-c85ca9ce-29da-4380-af00-5f4b8c646a3a.PNG)
-ET, POST, PUT, DELETE), responsáveis pelas operações de visualização, criação, atualização e deleção respectivamente.
+- As operações reservadas para nossa API foram (GET, POST, PUT, DELETE), responsáveis pelas operações de visualização, criação, atualização e deleção respectivamente.
 
 ## 🤜🤛 Grupo:
 
